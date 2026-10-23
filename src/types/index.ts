@@ -17,6 +17,40 @@ export interface CustomField {
   value: string;
 }
 
+export interface ImportantLink {
+  id: string;
+  title: string;
+  description?: string;
+  url: string;
+  icon?: 'store' | 'shopping-bag' | 'sparkles' | 'link' | 'message-circle' | 'globe' | 'star' | 'zap' | 'vyonel' | string;
+  badge?: string;
+  badgeColor?: string;
+  highlight?: boolean;
+}
+
+export interface SocialPlatformStat {
+  platform: 'tiktok' | 'instagram' | 'youtube' | 'snapchat' | 'facebook';
+  name: string;
+  handle: string;
+  url: string;
+  followers?: string | number;
+  followersLabel?: string;
+  likesOrViews?: string | number;
+  likesOrViewsLabel?: string;
+  badge?: string;
+  verified?: boolean;
+  color?: string;
+}
+
+export interface SocialLiveStatsConfig {
+  enabled: boolean;
+  autoRefreshIntervalMinutes?: number;
+  youtubeChannelHandle?: string; // e.g. "@u1sxv"
+  totalFollowersEstimate?: string;
+  totalInteractionsEstimate?: string;
+  platforms: SocialPlatformStat[];
+}
+
 export interface SheikhConfig {
   type: string;
   typeLabel: string;
@@ -32,6 +66,8 @@ export interface SheikhConfig {
   certificates: string[];
   location: string;
   customFields: CustomField[];
+  importantLinks?: ImportantLink[];
+  socialStats?: SocialLiveStatsConfig;
   colors: {
     primary: string;
     gold: string;

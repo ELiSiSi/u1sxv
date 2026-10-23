@@ -16,6 +16,8 @@ import {
 } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { Link, Navigate, useNavigate, useParams } from 'react-router-dom';
+import { ImportantLinks } from '../components/ImportantLinks';
+import { SocialLiveStats } from '../components/SocialLiveStats';
 import { SocialLinks } from '../components/Footer';
 import { SEO } from '../components/SEO';
 import { ShareButtons } from '../components/ShareButtons';
@@ -195,19 +197,34 @@ const Hero = () => (
           {/* Actions */}
           <div className="pt-2 sm:pt-4 flex flex-col sm:flex-row flex-wrap gap-2.5 sm:gap-3.5 justify-center lg:justify-start">
             <a
+              href="https://mtjr.at/6ad27d60qy9ant"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-5 sm:px-6 py-3 sm:py-3.5 rounded-2xl bg-gradient-to-r from-amber-500 via-amber-400 to-amber-500 hover:from-amber-400 hover:to-amber-300 text-slate-950 font-black text-sm sm:text-base transition-all shadow-lg hover:shadow-amber-500/30 group">
+              <span className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-black flex items-center justify-center overflow-hidden shadow-md p-1 flex-shrink-0 ring-1 ring-black/40">
+                <img
+                  src="/vyonel-logo.png"
+                  alt="VYONEL"
+                  className="w-full h-full object-contain group-hover:scale-115 transition-transform"
+                />
+              </span>
+              <span className="text-sm sm:text-base font-black">متجر فيونيل (VYONEL)</span>
+            </a>
+
+            <a
+              href="#important-links"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-2xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm sm:text-base transition-all shadow-lg hover:shadow-blue-600/30">
+              <span>الروابط المهمة</span>
+              <ArrowLeft className="w-4 h-4" />
+            </a>
+
+            <a
               href={sheikhConfig.social.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-sm sm:text-base transition-all shadow-lg hover:shadow-emerald-500/30">
               <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5" />
-              <span>تواصل مباشر (واتساب)</span>
-            </a>
-
-            <a
-              href="#social-hub"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-2xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm sm:text-base transition-all shadow-lg hover:shadow-blue-600/30">
-              <span>تابع منصاتي (@u1sxv)</span>
-              <ArrowLeft className="w-4 h-4" />
+              <span>واتساب</span>
             </a>
 
             <Link
@@ -601,18 +618,22 @@ export const Home = () => {
       {/* 1. Creator Hero */}
       <Hero />
 
-      {/* 2. Personal Manifesto */}
+      {/* 2. Important Quick Links (Direct on Landing) */}
+      <ImportantLinks />
+
+      {/* 3. Live Platform Stats & Interaction Counter */}
+      <SocialLiveStats />
+
+      {/* 4. Personal Manifesto */}
       <ManifestoSection />
 
-      {/* 3. Content Pillars */}
+      {/* 5. Content Pillars */}
       <ContentAreas />
 
-      {/* 4. Social Presence Hub */}
+      {/* 6. Social Presence Hub */}
       <SocialHub />
 
-
-
-      {/* 6. Direct Contact CTA */}
+      {/* 7. Direct Contact CTA */}
       <ContactCTA />
     </motion.div>
   );

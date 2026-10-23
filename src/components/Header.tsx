@@ -63,6 +63,12 @@ export const Header = () => {
           <NavLink to="/" end>
             الرئيسية
           </NavLink>
+          <a href="/#important-links" className="text-amber-400 font-bold hover:text-amber-300">
+            المتجر والروابط
+          </a>
+          <a href="/#social-live-stats">
+            إحصائيات المنصات
+          </a>
           <NavLink to="/profile">عن محمد</NavLink>
           <a href="/#content-areas">المجالات</a>
           <a href="/#social-hub">المنصات</a>
@@ -71,6 +77,17 @@ export const Header = () => {
 
         <div className="story-nav-tools flex items-center gap-1.5 sm:gap-3">
           <ThemeToggle />
+          <a
+            className="story-nav-cta flex items-center gap-2 px-2.5 py-1.5 sm:px-3 sm:py-1.5 text-xs sm:text-sm bg-amber-500/20 text-amber-300 border border-amber-500/40 hover:bg-amber-500/30 rounded-xl"
+            href="https://mtjr.at/6ad27d60qy9ant"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="متجر فيونيل الرسمي (VYONEL)">
+            <span className="w-7 h-7 rounded-lg bg-black flex items-center justify-center overflow-hidden p-0.5 shadow-sm flex-shrink-0 ring-1 ring-amber-400/40">
+              <img src="/vyonel-logo.png" alt="VYONEL" className="w-full h-full object-contain" />
+            </span>
+            <span className="font-bold">متجر VYONEL</span>
+          </a>
           <a
             className="story-nav-cta flex items-center gap-1.5 px-2.5 py-1.5 sm:px-3.5 sm:py-2 text-xs sm:text-sm"
             href={sheikhConfig.social.whatsapp}
@@ -95,6 +112,12 @@ export const Header = () => {
           <NavLink to="/" end onClick={() => setIsOpen(false)}>
             الرئيسية
           </NavLink>
+          <a href="/#important-links" onClick={() => setIsOpen(false)} className="text-amber-400 font-bold">
+            المتجر والروابط المهمة
+          </a>
+          <a href="/#social-live-stats" onClick={() => setIsOpen(false)}>
+            إحصائيات المنصات والتفاعل
+          </a>
           <NavLink to="/profile" onClick={() => setIsOpen(false)}>
             عن محمد
           </NavLink>
@@ -108,10 +131,20 @@ export const Header = () => {
             تواصل معي
           </a>
           <a
+            href="https://mtjr.at/6ad27d60qy9ant"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-2 py-2.5 px-4 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center gap-3 text-sm font-bold shadow-md">
+            <span className="w-8 h-8 rounded-lg bg-black flex items-center justify-center overflow-hidden p-0.5 shadow-sm flex-shrink-0 ring-1 ring-black/40">
+              <img src="/vyonel-logo.png" alt="VYONEL" className="w-full h-full object-contain" />
+            </span>
+            <span className="font-bold">متجر فيونيل (VYONEL)</span>
+          </a>
+          <a
             href={sheikhConfig.social.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-3 py-2 px-4 rounded-xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center justify-center gap-2 text-sm font-bold">
+            className="mt-2 py-2 px-4 rounded-xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center justify-center gap-2 text-sm font-bold">
             <MessageCircle className="w-4 h-4" />
             واتساب: 0593605211
           </a>
