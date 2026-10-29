@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import {
   ArrowUpLeft,
+  FolderDown,
   Heart,
   Mail,
   MapPin,
@@ -83,6 +84,14 @@ export const SheikhProfile = () => (
           </div>
 
           <div className="pt-2 sm:pt-4 flex flex-col sm:flex-row gap-2.5 sm:gap-3 justify-center md:justify-start">
+            <a
+              href="https://drive.google.com/drive/folders/1-2zFOthFY0vbxwigrt2vXnKmbGrNh8IW"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 sm:py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs sm:text-sm transition-all shadow-md">
+              <FolderDown className="w-4 h-4" />
+              <span>ملف الأعمال بالدرايف</span>
+            </a>
             <a
               href={sheikhConfig.social.whatsapp}
               target="_blank"

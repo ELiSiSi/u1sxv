@@ -51,6 +51,41 @@ export interface SocialLiveStatsConfig {
   platforms: SocialPlatformStat[];
 }
 
+export interface CharityCampaign {
+  enabled: boolean;
+  title: string;
+  description: string;
+  url: string;
+  badge?: string;
+  organization?: string;
+  targetAmount?: string;
+  collectedAmount?: string;
+  donorCount?: string;
+  note?: string;
+}
+
+export interface BrandPartnership {
+  id: string;
+  name: string;
+  category: string;
+  logo?: string;
+  description: string;
+  url?: string;
+  badge?: string;
+}
+
+export interface PortfolioConfig {
+  driveUrl: string;
+  title: string;
+  description: string;
+  services: {
+    title: string;
+    desc: string;
+    icon?: string;
+  }[];
+  partnerships: BrandPartnership[];
+}
+
 export interface SheikhConfig {
   type: string;
   typeLabel: string;
@@ -67,6 +102,8 @@ export interface SheikhConfig {
   location: string;
   customFields: CustomField[];
   importantLinks?: ImportantLink[];
+  charityCampaign?: CharityCampaign;
+  portfolio?: PortfolioConfig;
   socialStats?: SocialLiveStatsConfig;
   colors: {
     primary: string;

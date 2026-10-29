@@ -257,12 +257,40 @@ export const Footer = () => {
                     <span className="w-8 h-8 rounded-lg bg-black flex items-center justify-center overflow-hidden p-0.5 ring-1 ring-amber-400/50 flex-shrink-0">
                       <img src="/vyonel-logo.png" alt="VYONEL" className="w-full h-full object-contain group-hover:scale-110 transition-transform" />
                     </span>
-                    <span className="font-bold">متجر فيونيل الرسمي (VYONEL)</span>
+                    <span className="font-bold">متجر العطور (فيونيل VYONEL)</span>
+                  </a>
+                </li>
+                {sheikhConfig.charityCampaign?.enabled && (
+                  <li>
+                    <a
+                      href={sheikhConfig.charityCampaign.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-emerald-400 hover:text-emerald-300 font-bold transition-colors flex items-center gap-2">
+                      <Heart className="w-4 h-4 text-emerald-400 fill-emerald-500/20" />
+                      <span>المبادرة الخيرية المتجددة</span>
+                    </a>
+                  </li>
+                )}
+                <li>
+                  <a
+                    href="https://drive.google.com/drive/folders/1-2zFOthFY0vbxwigrt2vXnKmbGrNh8IW"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-400 hover:text-blue-300 font-bold transition-colors flex items-center gap-2">
+                    <Sparkles className="w-4 h-4 text-blue-400" />
+                    <span>ملف الأعمال بالدرايف (Media Kit)</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/#partnerships-section" className="hover:text-blue-400 transition-colors flex items-center gap-2">
+                    <Sparkles className="w-4 h-4 text-amber-400" />
+                    <span>الشراكات والإعلانات التجارية</span>
                   </a>
                 </li>
                 <li>
                   <a href="/#important-links" className="hover:text-blue-400 transition-colors flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-amber-400" />
+                    <Sparkles className="w-4 h-4 text-slate-400" />
                     <span>الروابط المهمة والسريعة</span>
                   </a>
                 </li>
@@ -270,12 +298,6 @@ export const Footer = () => {
                   <a href="/#social-live-stats" className="hover:text-blue-400 transition-colors flex items-center gap-2">
                     <Sparkles className="w-4 h-4 text-emerald-400" />
                     <span>إحصائيات المنصات المباشرة</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="/#content-areas" className="hover:text-blue-400 transition-colors flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-blue-400" />
-                    <span>مجالات التوعية والمحتوى</span>
                   </a>
                 </li>
                 <li>

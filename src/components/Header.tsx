@@ -64,14 +64,20 @@ export const Header = () => {
             الرئيسية
           </NavLink>
           <a href="/#important-links" className="text-amber-400 font-bold hover:text-amber-300">
-            المتجر والروابط
+            متجر العطور والروابط
+          </a>
+          {sheikhConfig.charityCampaign?.enabled && (
+            <a href={sheikhConfig.charityCampaign.url} target="_blank" rel="noopener noreferrer" className="text-emerald-400 font-bold hover:text-emerald-300">
+              رابط خيري
+            </a>
+          )}
+          <a href="/#partnerships-section" className="text-blue-400 font-bold hover:text-blue-300">
+            ملف الأعمال والشراكات
           </a>
           <a href="/#social-live-stats">
             إحصائيات المنصات
           </a>
           <NavLink to="/profile">عن محمد</NavLink>
-          <a href="/#content-areas">المجالات</a>
-          <a href="/#social-hub">المنصات</a>
           <a href="/#contact-section">تواصل</a>
         </div>
 
@@ -82,11 +88,11 @@ export const Header = () => {
             href="https://mtjr.at/6ad27d60qy9ant"
             target="_blank"
             rel="noopener noreferrer"
-            title="متجر فيونيل الرسمي (VYONEL)">
+            title="متجر العطور الفاخرة | فيونيل (VYONEL)">
             <span className="w-7 h-7 rounded-lg bg-black flex items-center justify-center overflow-hidden p-0.5 shadow-sm flex-shrink-0 ring-1 ring-amber-400/40">
               <img src="/vyonel-logo.png" alt="VYONEL" className="w-full h-full object-contain" />
             </span>
-            <span className="font-bold">متجر VYONEL</span>
+            <span className="font-bold">متجر العطور</span>
           </a>
           <a
             className="story-nav-cta flex items-center gap-1.5 px-2.5 py-1.5 sm:px-3.5 sm:py-2 text-xs sm:text-sm"
@@ -112,8 +118,16 @@ export const Header = () => {
           <NavLink to="/" end onClick={() => setIsOpen(false)}>
             الرئيسية
           </NavLink>
-          <a href="/#important-links" onClick={() => setIsOpen(false)} className="text-amber-400 font-bold">
-            المتجر والروابط المهمة
+          <a href="https://mtjr.at/6ad27d60qy9ant" target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)} className="text-amber-400 font-bold">
+            متجر العطور (فيونيل VYONEL)
+          </a>
+          {sheikhConfig.charityCampaign?.enabled && (
+            <a href={sheikhConfig.charityCampaign.url} target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)} className="text-emerald-400 font-bold">
+              رابط خيري متجدد (ساهم الآن)
+            </a>
+          )}
+          <a href="/#partnerships-section" onClick={() => setIsOpen(false)} className="text-blue-400 font-bold">
+            ملف الأعمال والشراكات بالدرايف
           </a>
           <a href="/#social-live-stats" onClick={() => setIsOpen(false)}>
             إحصائيات المنصات والتفاعل
@@ -121,12 +135,6 @@ export const Header = () => {
           <NavLink to="/profile" onClick={() => setIsOpen(false)}>
             عن محمد
           </NavLink>
-          <a href="/#content-areas" onClick={() => setIsOpen(false)}>
-            المجالات
-          </a>
-          <a href="/#social-hub" onClick={() => setIsOpen(false)}>
-            المنصات
-          </a>
           <a href="/#contact-section" onClick={() => setIsOpen(false)}>
             تواصل معي
           </a>
@@ -138,7 +146,7 @@ export const Header = () => {
             <span className="w-8 h-8 rounded-lg bg-black flex items-center justify-center overflow-hidden p-0.5 shadow-sm flex-shrink-0 ring-1 ring-black/40">
               <img src="/vyonel-logo.png" alt="VYONEL" className="w-full h-full object-contain" />
             </span>
-            <span className="font-bold">متجر فيونيل (VYONEL)</span>
+            <span className="font-bold">متجر العطور الفاخرة (VYONEL)</span>
           </a>
           <a
             href={sheikhConfig.social.whatsapp}

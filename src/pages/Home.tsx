@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import {
-  ArrowLeft,
   ArrowRight,
+  Briefcase,
   CheckCircle,
   ExternalLink,
   Film,
@@ -18,6 +18,8 @@ import { useEffect, useRef, useState } from 'react';
 import { Link, Navigate, useNavigate, useParams } from 'react-router-dom';
 import { ImportantLinks } from '../components/ImportantLinks';
 import { SocialLiveStats } from '../components/SocialLiveStats';
+import { CharityBanner } from '../components/CharityBanner';
+import { PartnershipsSection } from '../components/PartnershipsSection';
 import { SocialLinks } from '../components/Footer';
 import { SEO } from '../components/SEO';
 import { ShareButtons } from '../components/ShareButtons';
@@ -196,6 +198,7 @@ const Hero = () => (
 
           {/* Actions */}
           <div className="pt-2 sm:pt-4 flex flex-col sm:flex-row flex-wrap gap-2.5 sm:gap-3.5 justify-center lg:justify-start">
+            {/* 1. متجر العطور الفاخرة VYONEL */}
             <a
               href="https://mtjr.at/6ad27d60qy9ant"
               target="_blank"
@@ -208,28 +211,51 @@ const Hero = () => (
                   className="w-full h-full object-contain group-hover:scale-115 transition-transform"
                 />
               </span>
-              <span className="text-sm sm:text-base font-black">متجر فيونيل (VYONEL)</span>
+              <div className="text-right">
+                <span className="block text-[11px] font-bold text-slate-800 leading-none mb-1">المتجر المعتمد</span>
+                <span className="text-sm sm:text-base font-black">متجر العطور (VYONEL)</span>
+              </div>
             </a>
 
+            {/* 2. رابط خيري متجدد */}
+            {sheikhConfig.charityCampaign?.enabled && (
+              <a
+                href={sheikhConfig.charityCampaign.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-5 sm:px-6 py-3 sm:py-3.5 rounded-2xl bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-black text-sm sm:text-base transition-all shadow-lg hover:shadow-emerald-500/30 group">
+                <span className="w-8 h-8 rounded-xl bg-white/20 flex items-center justify-center text-white flex-shrink-0">
+                  <Heart className="w-4 h-4 text-white fill-white/40 group-hover:scale-110 transition-transform" />
+                </span>
+                <div className="text-right">
+                  <span className="block text-[10px] text-emerald-200 font-bold leading-none mb-1">يتجدد عند اكتمال الحالة</span>
+                  <span className="text-sm sm:text-base font-black">رابط خيري متجدد</span>
+                </div>
+              </a>
+            )}
+
+            {/* 3. ملف الأعمال والشراكات بالدرايف */}
             <a
-              href="#important-links"
+              href="#partnerships-section"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-2xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm sm:text-base transition-all shadow-lg hover:shadow-blue-600/30">
-              <span>الروابط المهمة</span>
-              <ArrowLeft className="w-4 h-4" />
+              <Briefcase className="w-4 h-4 sm:w-5 sm:h-5" />
+              <span>ملف الأعمال والشراكات</span>
             </a>
 
+            {/* 4. واتساب */}
             <a
               href={sheikhConfig.social.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-sm sm:text-base transition-all shadow-lg hover:shadow-emerald-500/30">
-              <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5" />
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-3 sm:py-3.5 rounded-2xl bg-slate-800 hover:bg-slate-700 text-emerald-400 border border-slate-700 font-bold text-sm sm:text-base transition-all">
+              <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400" />
               <span>واتساب</span>
             </a>
 
+            {/* 5. عن محمد */}
             <Link
               to="/profile"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-2xl bg-slate-200 dark:bg-slate-800/80 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 font-bold text-sm sm:text-base transition-all">
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-3 sm:py-3.5 rounded-2xl bg-slate-200 dark:bg-slate-800/80 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 font-bold text-sm sm:text-base transition-all">
               <span>عن محمد</span>
             </Link>
           </div>
@@ -615,25 +641,31 @@ export const Home = () => {
       className="story-home">
       <SEO />
       
+      {/* Top Dynamic Charity Banner */}
+      <CharityBanner />
+
       {/* 1. Creator Hero */}
       <Hero />
 
       {/* 2. Important Quick Links (Direct on Landing) */}
       <ImportantLinks />
 
-      {/* 3. Live Platform Stats & Interaction Counter */}
+      {/* 3. Live Platform Stats & 100% Verified Interaction */}
       <SocialLiveStats />
 
-      {/* 4. Personal Manifesto */}
+      {/* 4. Portfolio, Media Kit & Brand Partnerships */}
+      <PartnershipsSection />
+
+      {/* 5. Personal Manifesto */}
       <ManifestoSection />
 
-      {/* 5. Content Pillars */}
+      {/* 6. Content Pillars */}
       <ContentAreas />
 
-      {/* 6. Social Presence Hub */}
+      {/* 7. Social Presence Hub */}
       <SocialHub />
 
-      {/* 7. Direct Contact CTA */}
+      {/* 8. Direct Contact CTA */}
       <ContactCTA />
     </motion.div>
   );
